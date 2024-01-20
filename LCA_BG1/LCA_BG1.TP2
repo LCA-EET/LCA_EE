@@ -1,0 +1,160 @@
+/* Copyright Notice
+Copyright © 2024 Daniel Valle, LCA
+ 
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CON TRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+*/
+
+/* ARTWORK CREDITS
+
+Defender of Baldur's Gate Cutscene - The Festival of the Middle Ages, by Taehoon Kang. https://www.artstation.com/taegongsin
+
+Journey to Saradush Cutscene - Medeival City Under Siege, by Raymond Minnaar. https://www.deviantart.com/raymondminnaar/art/Avalon-Lords-Castle-Siege-450232609
+
+Demon Knight, by Anakin Lee
+https://www.artstation.com/artwork/d0mbQ
+https://twitter.com/li_anakin
+*/
+
+/* DIALOG CREDITS
+
+The dialog from the revised sewer cutscene at the end of SoD used with permission from SilentGuy2011 (https://www.deviantart.com/silentguy2011). Check out his DA page, particularly the "Baldur's Gate SoD: Dragonspear Crusade" fanfiction - it's very good! 
+
+Thanks again for allowing me to use some of your work!
+
+*/
+
+/* TESTING CREDITS
+
+Thank you to everyone that helped to test this mod. I appreciate all of your contributions, particularly those on the Gibberlings3 Forums.
+
+*/
+
+/* FINAL CREDITS
+
+Thank you to T. Mounier, whose extensive, well-written feedback helped me to release v1.1 of the mod.
+
+Lastly, thank you to k4thos for creating the EET mod, without which this mod would not be possible.
+
+*/
+
+BACKUP ~LCA_BG1/BACKUP~
+
+AUTHOR ~Daniel Valle, dan@danielvalle.net~
+
+//Link to LCA Discord: https://discord.gg/hwGf39gW9g 
+//Link to LCA YouTube Channel: https://www.youtube.com/@lcamod/videos 
+//Link to GitHub: https://github.com/LCA-EET/XAA
+
+AUTO_TRA ~LCA_BG1/TRA/%s~ //automatically associate .tras to their respective .D files
+LANGUAGE ~English~ ~english~ ~LCA_BG1/TRA/ENGLISH/XALCA.TRA~
+
+
+BEGIN
+@0 /* ~Love Conquers All (BG1)~*/
+REQUIRE_PREDICATE GAME_IS ~bgee~ @1 /* ~This mod is applicable only to Baldur's Gate Enhanced Edition.~*/
+
+COMPILE EVALUATE_BUFFER ~LCA_BG1/D~
+COMPILE EVALUATE_BUFFER ~LCA_BG1/BAF~ 
+
+//{ String Sets
+	STRING_SET 2516 @2 //BELAND State 0 /* */
+	STRING_SET 2517 @3 //BELAND State 1 /* */
+	STRING_SET 16992 @4 //DELTAN2 State 1 /* */
+	STRING_SET 16991 @5 //DELTAN2 State 4 /* */
+	STRING_SET 2152 @6 //NEB_ State 3 /* */
+	STRING_SET 9737 @7 //ALANBL State 5 /* */
+	STRING_SET 9701 @8 //SORREL State 2 /* */
+	STRING_SET 19473 @9 //VAI State 6 /* */
+//}
+
+//{ Modifications to Existing Areas
+
+	//{ Corwin's House (SE Baldur's Gate)
+	COPY_EXISTING ~BG1316.ARE~ ~override~
+	LPF fj_are_structure
+		INT_VAR
+		fj_type 		= 2
+		fj_box_left		= 533
+		fj_box_top		= 108
+		fj_box_right	= 580
+		fj_box_bottom	= 205
+		fj_cursor_idx	= 22
+		fj_alt_x		= 550
+		fj_alt_y		= 150
+		fj_flags		= 1024
+		fj_vertex_0     = 533 + (156 << 16)
+		fj_vertex_1     = 580 + (205 << 16)
+		fj_vertex_2     = 580 + (158 << 16)
+		fj_vertex_3     = 533 + (108 << 16)
+		STR_VAR
+		fj_structure_type = region
+		fj_name = ~XA1316FP~
+		fj_reg_script = ~XA1316FP~
+	END
+	//}
+	
+	//{ Corwin's House (SE Baldur's Gate), Second Floor
+	COPY_EXISTING ~BG1317.ARE~ ~override~
+	LPF ALTER_AREA_ACTOR
+		STR_VAR
+		actor_name = ~Sleeping Man~
+		script_override = ~XA1317DS~
+	END
+	LPF ALTER_AREA_ACTOR
+		STR_VAR
+		actor_name = ~Sleeping Woman~
+		script_override = ~XA1317DS~
+	END
+	//}
+
+//}
+
+
+//{ Script Modifications
+	EXTEND_TOP ~BALDUR.BCS~ ~LCA_BG1/BAF/XALCASST.BAF~
+	EXTEND_TOP ~BG1317.BCS~ ~LCA_BG1/BAF/XABG1317.BAF~
+//}
+
+//{ New Items
+	//{ Ammo Belt
+		COPY ~LCA_BG1/ITM/XAAMBELT.ITM~ ~override~
+		SAY NAME1 @10 /* ~Ammo Belt~*/
+		SAY NAME2 @10 /* */
+		SAY UNIDENTIFIED_DESC @11 /* */
+		SAY DESC @11 /* */
+	//}
+	
+	//{ Flaming Fist Manual
+		COPY ~LCA_BG1/ITM/XAFFBOOK.ITM~ ~override~
+		SAY NAME1 @12 /* ~Officers' Training Manual~*/
+		SAY NAME2 @12 /* */
+		SAY UNIDENTIFIED_DESC @13
+		SAY DESC @13
+	//}
+	
+	//{ Burned Letter
+		COPY ~LCA_BG1/ITM/XALTRBRN.ITM~ ~override~
+		SAY NAME1 @16 /* ~Burned Document~ */
+		SAY NAME2 @16 /* */
+		SAY UNIDENTIFIED_DESC @17
+		SAY DESC @17
+	//}
+//}
+
+//{ LCA Assistant
+	COPY ~LCA_BG1/SPL/XAASSIS1.SPL~ ~override~
+	SAY NAME1 @14 /*~LCA Assistant~ */
+	SAY UNIDENTIFIED_DESC @15
+	SAY DESC @15
+	COPY ~LCA_BG1/BAM/XAASSIST.BAM~ ~override~
+//}
+
+//{ LCA Debugger
+	COPY ~LCA_BG1/CRE/XAADBG.CRE~ ~override~
+	SAY NAME1 @18
+	SAY NAME2 @18
+//}
