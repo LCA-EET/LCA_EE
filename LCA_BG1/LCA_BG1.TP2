@@ -74,7 +74,7 @@ COMPILE EVALUATE_BUFFER ~LCA_BG1/BAF~
 //{ Modifications to Existing Areas
 
 	//{ Corwin's House (SE Baldur's Gate)
-	COPY_EXISTING ~BG1316.ARE~ ~override~
+	COPY_EXISTING ~AR1316.ARE~ ~override~
 	LPF fj_are_structure
 		INT_VAR
 		fj_type 		= 2
@@ -98,7 +98,7 @@ COMPILE EVALUATE_BUFFER ~LCA_BG1/BAF~
 	//}
 	
 	//{ Corwin's House (SE Baldur's Gate), Second Floor
-	COPY_EXISTING ~BG1317.ARE~ ~override~
+	COPY_EXISTING ~AR1317.ARE~ ~override~
 	LPF ALTER_AREA_ACTOR
 		STR_VAR
 		actor_name = ~Sleeping Man~
@@ -115,7 +115,6 @@ COMPILE EVALUATE_BUFFER ~LCA_BG1/BAF~
 
 
 //{ Script Modifications
-	EXTEND_TOP ~BALDUR.BCS~ ~LCA_BG1/BAF/XALCASST.BAF~
 	EXTEND_TOP ~BG1317.BCS~ ~LCA_BG1/BAF/XABG1317.BAF~
 //}
 
@@ -143,14 +142,6 @@ COMPILE EVALUATE_BUFFER ~LCA_BG1/BAF~
 		SAY UNIDENTIFIED_DESC @17
 		SAY DESC @17
 	//}
-//}
-
-//{ LCA Assistant
-	COPY ~LCA_BG1/SPL/XAASSIS1.SPL~ ~override~
-	SAY NAME1 @14 /*~LCA Assistant~ */
-	SAY UNIDENTIFIED_DESC @15
-	SAY DESC @15
-	COPY ~LCA_BG1/BAM/XAASSIST.BAM~ ~override~
 //}
 
 //{ LCA Debugger

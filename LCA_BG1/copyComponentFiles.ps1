@@ -24,13 +24,8 @@ $path_LCAEET = "..\..\LCA\"
 $BAFcomponents = @(
 'XA1316FP',
 'XA1317DS',
-'XALCASST',
 'XABG1317',
 'XAADBG'
-)
-
-$BAMcomponents = @(
-'XAASSIST'
 )
 
 $CREcomponents = @(
@@ -38,7 +33,7 @@ $CREcomponents = @(
 )
 
 $Dcomponents = @(
-'XALCASST'
+'XAADBG'
 )
 
 $ITMcomponents = @(
@@ -47,22 +42,14 @@ $ITMcomponents = @(
 'XALTRBRN'
 )
 
-$SPLcomponents = @(
-'XAASSIS1'
-)
-
-
 
 $TRAcomponents = @(
-'XALCASST'
 'XAADBG'
 )
 
 CopyEETComponents 'BAF' $BAFcomponents
-CopyEETComponents 'BAM' $BAMcomponents
 CopyEETComponents 'CRE' $CREcomponents
 CopyEETComponents 'D' $Dcomponents
 CopyEETComponents 'ITM' $ITMcomponents
-CopyEETComponents 'SPL' $SPLcomponents
 
 CopyTRAComponents 'ENGLISH' $TRAcomponents
