@@ -26,7 +26,14 @@ $AREcomponents = @(
 )
 
 $BAFcomponents = @(
-'XATNTSCR'
+'XATNTSCR',
+'XABD0104',
+'XABDCORW',
+'XABD4400',
+'XABD5300',
+'XABD6000',
+'XASDBALD',
+'XASDJRNL'
 )
 
 $BMPcomponents = @(
@@ -41,7 +48,17 @@ $Dcomponents = @(
 'XABDBENC'
 'XASDMISC',
 'XASODCOR',
-'XATRIAL',
+'XATRIAL'
+)
+
+$ITMcomponents = @(
+'XALTRSCH',
+'XALTRCOR',
+'XAAMULET'
+)
+
+$SPLcomponents = @(
+'XALCARCH'
 )
 
 $TIScomponents = @(
@@ -54,7 +71,17 @@ $TRAcomponents = @(
 'XABDBENC',
 'XASDMISC',
 'XASODCOR',
-'XATRIAL'
+'XATRIAL',
+'XASDJRNL'
+)
+
+$WAVcomponents = @(
+'XA100129',
+'XA100128',
+'XA100067',
+'XA100127',
+'XA100130',
+'XA100065'
 )
 
 $WEDcomponents = @(
@@ -66,6 +93,9 @@ CopyEETComponents 'ARE' $AREcomponents
 CopyEETComponents 'BAF' $BAFcomponents
 CopyEETComponents 'BMP' $BMPcomponents
 CopyEETComponents 'D' $Dcomponents
+CopyEETComponents 'ITM' $ITMcomponents
+CopyEETComponents 'SPL' $TIScomponents
 CopyEETComponents 'TIS' $TIScomponents
+CopyEETComponents 'WAV' $WAVcomponents
 CopyEETComponents 'WED' $WEDcomponents
 CopyTRAComponents 'ENGLISH' $TRAcomponents
