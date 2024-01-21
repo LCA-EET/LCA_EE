@@ -42,6 +42,10 @@ $BMPcomponents = @(
 'XATENTSR'
 )
 
+$CREcomponents = @(
+'XABDSCH2'
+)
+
 $Dcomponents = @(
 'XABDASHA',
 'XABDSCH2',
@@ -92,9 +96,10 @@ $WEDcomponents = @(
 CopyEETComponents 'ARE' $AREcomponents
 CopyEETComponents 'BAF' $BAFcomponents
 CopyEETComponents 'BMP' $BMPcomponents
+CopyEETComponents 'CRE' $CREcomponents
 CopyEETComponents 'D' $Dcomponents
 CopyEETComponents 'ITM' $ITMcomponents
-CopyEETComponents 'SPL' $TIScomponents
+CopyEETComponents 'SPL' $SPLcomponents
 CopyEETComponents 'TIS' $TIScomponents
 CopyEETComponents 'WAV' $WAVcomponents
 CopyEETComponents 'WED' $WEDcomponents
