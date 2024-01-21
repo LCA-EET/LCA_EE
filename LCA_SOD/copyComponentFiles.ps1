@@ -36,9 +36,12 @@ $BMPcomponents = @(
 )
 
 $Dcomponents = @(
+'XABDASHA',
 'XABDSCH2',
-'XABDBENC',
-'XATRIAL'
+'XABDBENC'
+'XASDMISC',
+'XASODCOR',
+'XATRIAL',
 )
 
 $TIScomponents = @(
@@ -46,8 +49,11 @@ $TIScomponents = @(
 )
 
 $TRAcomponents = @(
+'XABDASHA',
 'XABDSCH2',
 'XABDBENC',
+'XASDMISC',
+'XASODCOR',
 'XATRIAL'
 )
 
