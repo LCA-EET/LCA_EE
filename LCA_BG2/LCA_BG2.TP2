@@ -1,0 +1,231 @@
+/* Copyright Notice
+Copyright © 2024 Daniel Valle, LCA
+ 
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CON TRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+*/
+
+/* ARTWORK CREDITS
+
+Defender of Baldur's Gate Cutscene - The Festival of the Middle Ages, by Taehoon Kang. https://www.artstation.com/taegongsin
+
+Journey to Saradush Cutscene - Medeival City Under Siege, by Raymond Minnaar. https://www.deviantart.com/raymondminnaar/art/Avalon-Lords-Castle-Siege-450232609
+
+Demon Knight, by Anakin Lee
+https://www.artstation.com/artwork/d0mbQ
+https://twitter.com/li_anakin
+*/
+
+/* DIALOG CREDITS
+
+The dialog from the revised sewer cutscene at the end of SoD used with permission from SilentGuy2011 (https://www.deviantart.com/silentguy2011). Check out his DA page, particularly the "Baldur's Gate SoD: Dragonspear Crusade" fanfiction - it's very good! 
+
+Thanks again for allowing me to use some of your work!
+
+*/
+
+/* TESTING CREDITS
+
+Thank you to everyone that helped to test this mod. I appreciate all of your contributions, particularly those on the Gibberlings3 Forums.
+
+*/
+
+/* FINAL CREDITS
+
+Thank you to T. Mounier, whose extensive, well-written feedback helped me to release v1.1 of the mod.
+
+Lastly, thank you to k4thos for creating the EET mod, without which this mod would not be possible.
+
+*/
+
+BACKUP ~LCA_BG2/BACKUP~
+
+AUTHOR ~Daniel Valle, dan@danielvalle.net~
+
+//Link to LCA Discord: https://discord.gg/hwGf39gW9g 
+//Link to LCA YouTube Channel: https://www.youtube.com/@lcamod/videos 
+//Link to GitHub: https://github.com/LCA-EET/XAA
+
+AUTO_TRA ~LCA_BG2/TRA/%s~ //automatically associate .tras to their respective .D files
+LANGUAGE ~English~ ~english~ ~LCA_BG2/TRA/ENGLISH/XALCA.TRA~
+
+
+BEGIN
+@0 /* ~Love Conquers All (Siege of Dragonspear)~*/
+REQUIRE_PREDICATE GAME_IS ~bg2ee~ @1 /* ~This mod is applicable only to Baldur's Gate 2 Enhanced Edition.~ */
+
+COMPILE EVALUATE_BUFFER ~LCA_BG2/D~
+COMPILE EVALUATE_BUFFER ~LCA_BG2/BAF~ 
+
+//{ New Items
+	//{ Letter from Corwin - Exile (Romantic)
+		COPY ~LCA_BG2/ITM/XALTRSCH.ITM~ ~override~
+		SAY NAME1 @4
+		SAY NAME2 @4
+		SAY UNIDENTIFIED_DESC @2
+		SAY DESC @2
+	//}
+
+	//{ Letter from Corwin - Exile (Non-Romantic)
+		COPY ~LCA_BG2/ITM/XALTRCOR.ITM~ ~override~
+		SAY NAME1 @5
+		SAY NAME2 @5
+		SAY UNIDENTIFIED_DESC @3
+		SAY DESC @3
+	//}
+	
+	//{ Corwin's Amulet  (Player)
+		COPY ~LCA_BG2/BAM/XAAMULET.BAM~ ~override~
+		COPY ~LCA_BG2/ITM/XAAMULET.ITM~ ~override~
+		SAY NAME1 @7
+		SAY NAME2 @7
+		SAY UNIDENTIFIED_DESC @6
+		SAY DESC @6
+	//}
+//}
+
+//{ New Spells / Abilities
+	//{ Corwin's Tutelage
+		COPY ~LCA_BG2/SPL/XALCARCH.SPL~ ~override~
+		SAY NAME1 @9
+		SAY UNIDENTIFIED_DESC @9
+		SAY DESC @9
+	//}
+//}
+
+//{ Text Screens
+
+	COPY ~LCA_BG2/MOS/XAPTSARA.MOS~ ~override~
+	COPY ~LCA_BG2/MOS/XABG.MOS~ ~override~
+	COPY ~LCA_BG2/MOS/XADINNER.MOS~ ~override~
+	COPY ~LCA_BG2/MOS/XABADEND.MOS~ ~override~
+
+	COPY ~LCA_BG2/2DA/XASARA1.2DA~ ~override~
+	SET_2DA_ENTRY 2 3 3 RESOLVE_STR_REF(@11)
+	SET_2DA_ENTRY 2 1 3 RESOLVE_STR_REF(@10)
+	SET_2DA_ENTRY 2 2 3 RESOLVE_STR_REF(@10)
+
+	COPY ~LCA_BG2/2DA/XASARA2.2DA~ ~override~
+	SET_2DA_ENTRY 2 3 3 RESOLVE_STR_REF(@12)
+	SET_2DA_ENTRY 2 1 3 RESOLVE_STR_REF(@10)
+	SET_2DA_ENTRY 2 2 3 RESOLVE_STR_REF(@10)
+
+	COPY ~LCA_BG2/2DA/XASARA3.2DA~ ~override~
+	SET_2DA_ENTRY 2 3 3 RESOLVE_STR_REF(@13)
+	SET_2DA_ENTRY 2 1 3 RESOLVE_STR_REF(@10)
+	SET_2DA_ENTRY 2 2 3 RESOLVE_STR_REF(@10)
+
+	COPY ~LCA_BG2/2DA/XASARA4.2DA~ ~override~
+	SET_2DA_ENTRY 2 3 3 RESOLVE_STR_REF(@14)
+	SET_2DA_ENTRY 2 1 3 RESOLVE_STR_REF(@10)
+	SET_2DA_ENTRY 2 2 3 RESOLVE_STR_REF(@10)
+
+	COPY ~LCA_BG2/2DA/XABGROM.2DA~ ~override~
+	SET_2DA_ENTRY 2 3 3 RESOLVE_STR_REF(@16)
+	SET_2DA_ENTRY 2 1 3 RESOLVE_STR_REF(@15)
+	SET_2DA_ENTRY 2 2 3 RESOLVE_STR_REF(@15)
+
+	COPY ~LCA_BG2/2DA/XABG.2DA~ ~override~
+	SET_2DA_ENTRY 2 3 3 RESOLVE_STR_REF(@17)
+	SET_2DA_ENTRY 2 1 3 RESOLVE_STR_REF(@15)
+	SET_2DA_ENTRY 2 2 3 RESOLVE_STR_REF(@15)
+
+	COPY ~LCA_BG2/2DA/XADINNER.2DA~ ~override~
+	SET_2DA_ENTRY 2 3 3 RESOLVE_STR_REF(@19)
+	SET_2DA_ENTRY 2 1 3 RESOLVE_STR_REF(@18)
+	SET_2DA_ENTRY 2 2 3 RESOLVE_STR_REF(@18)
+
+	COPY ~LCA_BG2/2DA/XADINROM.2DA~ ~override~
+	SET_2DA_ENTRY 2 3 3 RESOLVE_STR_REF(@20)
+	SET_2DA_ENTRY 2 1 3 RESOLVE_STR_REF(@18)
+	SET_2DA_ENTRY 2 2 3 RESOLVE_STR_REF(@18)
+
+	COPY ~LCA_BG2/2DA/XADINROM.2DA~ ~override~
+	SET_2DA_ENTRY 2 3 3 RESOLVE_STR_REF(@20)
+	SET_2DA_ENTRY 2 1 3 RESOLVE_STR_REF(@18)
+	SET_2DA_ENTRY 2 2 3 RESOLVE_STR_REF(@18)
+
+	COPY ~LCA_BG2/2DA/XABAD1.2DA~ ~override~
+	SET_2DA_ENTRY 2 3 3 RESOLVE_STR_REF(@22)
+	SET_2DA_ENTRY 2 1 3 RESOLVE_STR_REF(@21)
+	SET_2DA_ENTRY 2 2 3 RESOLVE_STR_REF(@21)
+
+	COPY ~LCA_BG2/2DA/XABAD2.2DA~ ~override~
+	SET_2DA_ENTRY 2 3 3 RESOLVE_STR_REF(@23)
+	SET_2DA_ENTRY 2 1 3 RESOLVE_STR_REF(@21)
+	SET_2DA_ENTRY 2 2 3 RESOLVE_STR_REF(@21)
+
+	COPY ~LCA_BG2/2DA/XABAD3.2DA~ ~override~
+	SET_2DA_ENTRY 2 3 3 RESOLVE_STR_REF(@24)
+	SET_2DA_ENTRY 2 1 3 RESOLVE_STR_REF(@21)
+	SET_2DA_ENTRY 2 2 3 RESOLVE_STR_REF(@21)
+	
+	
+	//{ Epilogues
+		//Caelar
+		COPY ~LCA_BG2/2DA/XACAEEND.2DA~ ~override~
+		SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@25)
+	
+		//{ Corwin Epilogues, SoD Portrait
+			//Corwin Romance, Male
+			COPY ~LCA_BG2/2DA/XACORND1.2DA~ ~override~
+			SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@26)
+			
+			//Corwin Romance, Female
+			COPY ~LCA_BG2/2DA/XACORND2.2DA~ ~override~
+			SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@27)
+			
+			//Corwin Romance, Male (Chose Godhood)
+			COPY ~LCA_BG2/2DA/XACORND3.2DA~ ~override~
+			SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@28)
+			
+			//Corwin Romance, Female (Chose Godhood)
+			COPY ~LCA_BG2/2DA/XACORND4.2DA~ ~override~
+			SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@29)
+			
+			//Corwin Non-Romance
+			COPY ~LCA_BG2/2DA/XACORND5.2DA~ ~override~
+			SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@30)
+			
+			//Corwin Non-Romance (Chose Godhood)
+			COPY ~LCA_BG2/2DA/XACORND6.2DA~ ~override~
+			SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@31)
+		//}
+		
+		//{ Corwin Epilogues, LCA Portrait
+			//Corwin Romance, Male
+			COPY ~LCA_BG2/2DA/XALCAND1.2DA~ ~override~
+			SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@26)
+			
+			//Corwin Romance, Female
+			COPY ~LCA_BG2/2DA/XALCAND2.2DA~ ~override~
+			SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@27)
+			
+			//Corwin Romance, Male (Chose Godhood)
+			COPY ~LCA_BG2/2DA/XALCAND3.2DA~ ~override~
+			SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@28)
+			
+			//Corwin Romance, Female (Chose Godhood)
+			COPY ~LCA_BG2/2DA/XALCAND4.2DA~ ~override~
+			SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@29)
+			
+			//Corwin Non-Romance
+			COPY ~LCA_BG2/2DA/XALCAND5.2DA~ ~override~
+			SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@30)
+			
+			//Corwin Non-Romance (Chose Godhood)
+			COPY ~LCA_BG2/2DA/XALCAND6.2DA~ ~override~
+			SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@31)
+		//}
+	//}
+
+//}
+
+//{ LCA Debugger
+	COPY ~LCA_BG2/CRE/XAADBG.CRE~ ~override~
+	SAY NAME1 @8
+	SAY NAME2 @8
+//}

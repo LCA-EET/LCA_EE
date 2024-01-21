@@ -21,25 +21,40 @@ Clear-Host
 
 $path_LCAEET = "..\..\LCA\"
 
+$2DAcomponents = @(
+'XABAD1',
+'XABAD2',
+'XABAD3',
+'XABG',
+'XABGROM',
+'XACAEEND',
+'XACORND1',
+'XACORND2',
+'XACORND3',
+'XACORND4',
+'XACORND5',
+'XACORND6',
+'XADINNER',
+'XADINROM',
+'XALCAND1',
+'XALCAND2',
+'XALCAND3',
+'XALCAND4',
+'XALCAND5',
+'XALCAND6',
+'XASARA1',
+'XASARA2',
+'XASARA3',
+'XASARA4'
+)
+
 $AREcomponents = @(
-'XACLRG',
-'XATENT'
+
 )
 
 $BAFcomponents = @(
-'XACLRG',
-'XALBPRO1',
-'XALBPRO2',
-'XALBPRO3',
-'XALBPROF',
-'XATNTSCR',
-'XABD0104',
-'XABDCORW',
-'XABD4400',
-'XABD5300',
-'XABD6000',
-'XASDBALD',
-'XASDJRNL'
+'XABALDUR',
+'XALCJRNL'
 )
 
 $BAMcomponents = @(
@@ -47,37 +62,34 @@ $BAMcomponents = @(
 )
 
 $BMPcomponents = @(
-'XACLRGHT',
-'XACLRGLM',
-'XACLRGSR',
-'XATENTHT',
-'XATENTLM',
-'XATENTSR'
+'XACORWIL',
+'XACORWIM',
+'XACORWIS',
+'XANARZUS',
+'XADINGSS'
 )
 
 $CREcomponents = @(
-'XABDSCH2',
 'XAADBG',
-'XAFISTEX',
-'XAWTREX'
+'XACORWIN'
 )
 
 $Dcomponents = @(
-'XABDASHA',
-'XABDSCH2',
-'XABDBENC',
-'XAFISTEX',
-'XALCASST',
-'XASDMISC',
-'XASODCOR',
-'XATRIAL',
-'XAWTREX'
+'XAAMISC'
+'XALCASST'
 )
 
 $ITMcomponents = @(
+'XAAMULET',
 'XALTRSCH',
-'XALTRCOR',
-'XAAMULET'
+'XALTRCOR'
+)
+
+$MOScomponents = @(
+'XAPTSARA',
+'XABG',
+'XADINNER',
+'XABADEND'
 )
 
 $SPLcomponents = @(
@@ -85,24 +97,12 @@ $SPLcomponents = @(
 )
 
 $TIScomponents = @(
-'XACLRG',
-'XATENT'
+
 )
 
 $TRAcomponents = @(
-'XABDASHA',
-'XABDSCH2',
-'XABDBENC',
-'XAFISTEX',
-'XALBPRO1',
-'XALBPRO2',
-'XALCASST',
-'XASDMISC',
-'XASODCOR',
-'XATNTCS',
-'XATRIAL',
-'XASDJRNL',
-'XAWTREX'
+'XAAMISC',
+'XALCASST'
 )
 
 $WAVcomponents = @(
@@ -119,7 +119,7 @@ $WEDcomponents = @(
 'XATENT'
 )
 
-
+CopyEETComponents '2DA' $2DAcomponents
 CopyEETComponents 'ARE' $AREcomponents
 CopyEETComponents 'BAF' $BAFcomponents
 CopyEETComponents 'BAM' $BAMcomponents
@@ -127,6 +127,7 @@ CopyEETComponents 'BMP' $BMPcomponents
 CopyEETComponents 'CRE' $CREcomponents
 CopyEETComponents 'D' $Dcomponents
 CopyEETComponents 'ITM' $ITMcomponents
+CopyEETComponents 'MOS' $MOScomponents
 CopyEETComponents 'SPL' $SPLcomponents
 CopyEETComponents 'TIS' $TIScomponents
 CopyEETComponents 'WAV' $WAVcomponents

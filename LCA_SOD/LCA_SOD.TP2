@@ -55,7 +55,7 @@ LANGUAGE ~English~ ~english~ ~LCA_SOD/TRA/ENGLISH/XALCA.TRA~
 
 BEGIN
 @0 /* ~Love Conquers All (Siege of Dragonspear)~*/
-REQUIRE_PREDICATE GAME_IS ~sod~ @1 /* ~This mod is applicable only to Baldur's Gate Siege of Dragonspear.~*/
+//REQUIRE_PREDICATE GAME_IS ~sod~ @1 /* ~This mod is applicable only to Baldur's Gate Siege of Dragonspear.~*/
 
 COMPILE EVALUATE_BUFFER ~LCA_SOD/D~
 COMPILE EVALUATE_BUFFER ~LCA_SOD/BAF~ 

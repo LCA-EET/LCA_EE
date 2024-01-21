@@ -53,3 +53,5 @@ CopyEETComponents 'D' $Dcomponents
 CopyEETComponents 'ITM' $ITMcomponents
 
 CopyTRAComponents 'ENGLISH' $TRAcomponents
+
+& "$(Split-Path $MyInvocation.MyCommand.Path)/makePkg.ps1"
