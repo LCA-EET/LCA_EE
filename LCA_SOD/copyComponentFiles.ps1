@@ -22,10 +22,16 @@ Clear-Host
 $path_LCAEET = "..\..\LCA\"
 
 $AREcomponents = @(
+'XACLRG',
 'XATENT'
 )
 
 $BAFcomponents = @(
+'XACLRG',
+'XALBPRO1',
+'XALBPRO2',
+'XALBPRO3',
+'XALBPROF',
 'XATNTSCR',
 'XABD0104',
 'XABDCORW',
@@ -37,6 +43,9 @@ $BAFcomponents = @(
 )
 
 $BMPcomponents = @(
+'XACLRGHT',
+'XACLRGLM',
+'XACLRGSR',
 'XATENTHT',
 'XATENTLM',
 'XATENTSR'
@@ -66,6 +75,7 @@ $SPLcomponents = @(
 )
 
 $TIScomponents = @(
+'XACLRG',
 'XATENT'
 )
 
@@ -73,8 +83,11 @@ $TRAcomponents = @(
 'XABDASHA',
 'XABDSCH2',
 'XABDBENC',
+'XALBPRO1',
+'XALBPRO2',
 'XASDMISC',
 'XASODCOR',
+'XATNTCS',
 'XATRIAL',
 'XASDJRNL'
 )
@@ -89,6 +102,7 @@ $WAVcomponents = @(
 )
 
 $WEDcomponents = @(
+'XACLRG',
 'XATENT'
 )
 
@@ -104,3 +118,5 @@ CopyEETComponents 'TIS' $TIScomponents
 CopyEETComponents 'WAV' $WAVcomponents
 CopyEETComponents 'WED' $WEDcomponents
 CopyTRAComponents 'ENGLISH' $TRAcomponents
+
+& "$(Split-Path $MyInvocation.MyCommand.Path)/makePkg.ps1"
