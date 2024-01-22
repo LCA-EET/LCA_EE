@@ -134,6 +134,15 @@ COMPILE EVALUATE_BUFFER ~LCA_BG2/BAF~
 		
 		
 	//}
+
+	//{ Rilifane Cutscene
+		COPY ~LCA_BG2/ARE/XACS12.ARE~ ~override~
+		COPY ~LCA_BG2/BMP/XACS12HT.BMP~ ~override~
+		COPY ~LCA_BG2/BMP/XACS12LM.BMP~ ~override~
+		COPY ~LCA_BG2/BMP/XACS12SR.BMP~ ~override~
+		COPY ~LCA_BG2/WED/XACS12.WED~ ~override~
+		COPY ~LCA_BG2/TIS/XACS12.TIS~ ~override~
+	//}
 //}
 
 //{ New Items
