@@ -155,6 +155,15 @@ COMPILE EVALUATE_BUFFER ~LCA_BG2/BAF~
 		COPY ~LCA_BG2/TIS/XAWYRM.TIS~ ~override~
 		COPY ~LCA_BG2/TIS/XAWYRMN.TIS~ ~override~
 	//}
+
+	//{ Ducal Palace, Third Floor (Skie Restoration)
+		COPY ~LCA_BG2/ARE/XADUC3.ARE~ ~override~
+		COPY ~LCA_BG2/BMP/XADUC3HT.BMP~ ~override~
+		COPY ~LCA_BG2/BMP/XADUC3LM.BMP~ ~override~
+		COPY ~LCA_BG2/BMP/XADUC3SR.BMP~ ~override~
+		COPY ~LCA_BG2/WED/XADUC3.WED~ ~override~
+		COPY ~LCA_BG2/TIS/XADUC3.TIS~ ~override~
+	//}
 //}
 
 //{ New Items

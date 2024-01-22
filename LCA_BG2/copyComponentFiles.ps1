@@ -52,7 +52,8 @@ $AREcomponents = @(
 'XA4500',
 'XA4700',
 'XACS12',
-'XAWYRM'
+'XAWYRM',
+'XADUC3'
 )
 
 $BAFcomponents = @(
@@ -83,6 +84,9 @@ $BMPcomponents = @(
 'XACS12HT',
 'XACS12LM',
 'XACS12SR',
+'XADUC3HT',
+'XADUC3LM',
+'XADUC3SR',
 'XAWYRMHT',
 'XAWYRMLM',
 'XAWYRMLN',
@@ -124,6 +128,7 @@ $TIScomponents = @(
 'XA4500',
 'XA4700',
 'XACS12',
+'XADUC3',
 'XAWYRM',
 'XAWYRMN'
 )
@@ -148,6 +153,7 @@ $WEDcomponents = @(
 'XA4500',
 'XA4700',
 'XACS12',
+'XADUC3',
 'XAWYRM',
 'XAWYRMN'
 )
