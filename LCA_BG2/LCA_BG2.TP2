@@ -143,6 +143,18 @@ COMPILE EVALUATE_BUFFER ~LCA_BG2/BAF~
 		COPY ~LCA_BG2/WED/XACS12.WED~ ~override~
 		COPY ~LCA_BG2/TIS/XACS12.TIS~ ~override~
 	//}
+	
+	//{ Wyrm's Crossing
+		COPY ~LCA_BG2/ARE/XAWYRM.ARE~ ~override~
+		COPY ~LCA_BG2/BMP/XAWYRMHT.BMP~ ~override~
+		COPY ~LCA_BG2/BMP/XAWYRMLM.BMP~ ~override~
+		COPY ~LCA_BG2/BMP/XAWYRMLN.BMP~ ~override~
+		COPY ~LCA_BG2/BMP/XAWYRMSR.BMP~ ~override~
+		COPY ~LCA_BG2/WED/XAWYRM.WED~ ~override~
+		COPY ~LCA_BG2/WED/XAWYRMN.WED~ ~override~
+		COPY ~LCA_BG2/TIS/XAWYRM.TIS~ ~override~
+		COPY ~LCA_BG2/TIS/XAWYRMN.TIS~ ~override~
+	//}
 //}
 
 //{ New Items

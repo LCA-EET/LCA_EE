@@ -51,7 +51,8 @@ $2DAcomponents = @(
 $AREcomponents = @(
 'XA4500',
 'XA4700',
-'XACS12'
+'XACS12',
+'XAWYRM'
 )
 
 $BAFcomponents = @(
@@ -82,6 +83,10 @@ $BMPcomponents = @(
 'XACS12HT',
 'XACS12LM',
 'XACS12SR',
+'XAWYRMHT',
+'XAWYRMLM',
+'XAWYRMLN',
+'XAWYRMSR',
 'XACORWIL',
 'XACORWIM',
 'XACORWIS',
@@ -118,7 +123,9 @@ $SPLcomponents = @(
 $TIScomponents = @(
 'XA4500',
 'XA4700',
-'XACS12'
+'XACS12',
+'XAWYRM',
+'XAWYRMN'
 )
 
 $TRAcomponents = @(
@@ -140,7 +147,9 @@ $WBMcomponents = @(
 $WEDcomponents = @(
 'XA4500',
 'XA4700',
-'XACS12'
+'XACS12',
+'XAWYRM',
+'XAWYRMN'
 )
 
 CopyEETComponents '2DA' $2DAcomponents
