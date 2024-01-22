@@ -49,19 +49,35 @@ $2DAcomponents = @(
 )
 
 $AREcomponents = @(
-
+'XA4500'
+'XA4700'
 )
 
 $BAFcomponents = @(
+'XA4500',
+'XA4500T1',
+'XA4500T2',
+'XA4500T3',
+'XA4700',
+'XA4700T1',
 'XABALDUR',
 'XALCJRNL'
 )
 
 $BAMcomponents = @(
-'XAAMULET'
+'XAAMULET',
+'XAFLAM02',
+'XAFLAM03',
+'XAFLAM04'
 )
 
 $BMPcomponents = @(
+'XA4500HT',
+'XA4500LM',
+'XA4500SR',
+'XA4700HT',
+'XA4700LM',
+'XA4700SR',
 'XACORWIL',
 'XACORWIM',
 'XACORWIS',
@@ -75,8 +91,7 @@ $CREcomponents = @(
 )
 
 $Dcomponents = @(
-'XAAMISC'
-'XALCASST'
+
 )
 
 $ITMcomponents = @(
@@ -97,26 +112,29 @@ $SPLcomponents = @(
 )
 
 $TIScomponents = @(
-
+'XA4500',
+'XA4700'
 )
 
 $TRAcomponents = @(
-'XAAMISC',
-'XALCASST'
+
 )
 
 $WAVcomponents = @(
-'XA100129',
-'XA100128',
-'XA100067',
-'XA100127',
-'XA100130',
-'XA100065'
+'XABD4400',
+'XABDLVA1'
+)
+
+$WBMcomponents = @(
+'XA4700L1',
+'XA4700L2',
+'XA4700L3',
+'XA4700L4'
 )
 
 $WEDcomponents = @(
-'XACLRG',
-'XATENT'
+'XA4500',
+'XA4700',
 )
 
 CopyEETComponents '2DA' $2DAcomponents
@@ -131,6 +149,7 @@ CopyEETComponents 'MOS' $MOScomponents
 CopyEETComponents 'SPL' $SPLcomponents
 CopyEETComponents 'TIS' $TIScomponents
 CopyEETComponents 'WAV' $WAVcomponents
+CopyEETComponents 'WBM' $WBMcomponents
 CopyEETComponents 'WED' $WEDcomponents
 CopyTRAComponents 'ENGLISH' $TRAcomponents
 

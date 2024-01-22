@@ -60,6 +60,82 @@ REQUIRE_PREDICATE GAME_IS ~bg2ee~ @1 /* ~This mod is applicable only to Baldur's
 COMPILE EVALUATE_BUFFER ~LCA_BG2/D~
 COMPILE EVALUATE_BUFFER ~LCA_BG2/BAF~ 
 
+//{ Animations
+	COPY ~LCA_BG2/BAM/XAFLAM02.BAM~ ~override~
+	COPY ~LCA_BG2/BAM/XAFLAM03.BAM~ ~override~
+	COPY ~LCA_BG2/BAM/XAFLAM04.BAM~ ~override~
+	
+	COPY ~LCA_BG2/WBM/XA4700L1.WBM~ ~override~
+	COPY ~LCA_BG2/WBM/XA4700L2.WBM~ ~override~
+	COPY ~LCA_BG2/WBM/XA4700L3.WBM~ ~override~
+	COPY ~LCA_BG2/WBM/XA4700L4.WBM~ ~override~
+//}
+
+//{ New Areas
+	//{ Avernus Bridge
+		COPY ~LCA_BG2/ARE/XA4500.ARE~ ~override~
+		COPY ~LCA_BG2/TIS/XA4500.TIS~ ~override~
+		COPY ~LCA_BG2/WED/XA4500.WED~ ~override~
+		COPY ~LCA_BG2/BMP/XA4500HT.BMP~ ~override~
+		COPY ~LCA_BG2/BMP/XA4500LM.BMP~ ~override~
+		COPY ~LCA_BG2/BMP/XA4500SR.BMP~ ~override~
+	//}
+	
+	//{ Avernus Roof
+		COPY ~LCA_BG2/ARE/XA4700.ARE~ ~override~
+		LPF ALTER_AREA_REGION
+			STR_VAR
+			region_name 	= ~Infopoint02~
+			INT_VAR
+			info_point		= RESOLVE_STR_REF(@32)
+		END
+		LPF ALTER_AREA_REGION
+			STR_VAR
+			region_name 	= ~Infopoint03~
+			INT_VAR
+			info_point		= RESOLVE_STR_REF(@33)
+		END
+		LPF ALTER_AREA_REGION
+			STR_VAR
+			region_name 	= ~Infopoint04~
+			INT_VAR
+			info_point		= RESOLVE_STR_REF(@34)
+		END
+		LPF ALTER_AREA_REGION
+			STR_VAR
+			region_name 	= ~Infopoint05~
+			INT_VAR
+			info_point		= RESOLVE_STR_REF(@35)
+		END
+		LPF ALTER_AREA_REGION
+			STR_VAR
+			region_name 	= ~Infopoint06~
+			INT_VAR
+			info_point		= RESOLVE_STR_REF(@36)
+		END
+		LPF ALTER_AREA_REGION
+			STR_VAR
+			region_name 	= ~Infopoint07~
+			INT_VAR
+			info_point		= RESOLVE_STR_REF(@36)
+		END
+		LPF ALTER_AREA_REGION
+			STR_VAR
+			region_name 	= ~Infopoint08~
+			INT_VAR
+			info_point		= RESOLVE_STR_REF(@36)
+		END
+		
+		COPY ~LCA_BG2/BMP/XA4700HT.BMP~ ~override~
+		COPY ~LCA_BG2/BMP/XA4700LM.BMP~ ~override~
+		COPY ~LCA_BG2/BMP/XA4700SR.BMP~ ~override~
+		COPY ~LCA_BG2/WED/XA4700.WED~ ~override~
+		COPY ~LCA_BG2/TIS/XA4700.TIS~ ~override~
+		
+		
+	//}
+//}
+
 //{ New Items
 	//{ Letter from Corwin - Exile (Romantic)
 		COPY ~LCA_BG2/ITM/XALTRSCH.ITM~ ~override~
@@ -222,6 +298,11 @@ COMPILE EVALUATE_BUFFER ~LCA_BG2/BAF~
 		//}
 	//}
 
+//}
+
+//{ New Sounds
+	COPY ~LCA_BG2/WAV/XABD4400.WAV~ ~override~
+	COPY ~LCA_BG2/WAV/XABDLVA1.WAV~ ~override~
 //}
 
 //{ LCA Debugger
